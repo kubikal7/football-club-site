@@ -1,0 +1,45 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Zawodnik</title>
+    <link rel="stylesheet" type="text/css" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/style-player.css">
+</head>
+<body>
+    <div th:replace="~{fragments/header::header}" class="w3-bar w3-green flex-center"></div>
+    <div class="main-content">
+        <p class="p-title">Zawodnik</p>
+        <div class="left-content-player">
+            <div class="w3-card-4 card">
+                <img th:src="@{${player.img}}" alt="Player" >
+                <div class="w3-container w3-center">
+                <p th:text="${player.name} + ' ' + ${player.surname}">Robert Lewandowski</p>
+                </div>
+            </div>
+        </div>
+        <div class="right-content-player">
+            <div>
+                <span>Imię: </span><span th:text="${player.name}"></span>
+            </div>
+            <div>
+                <span>Nazwisko: </span><span th:text="${player.surname}"></span>
+            </div>
+            
+            <div>
+                <span>Kraj: </span><span th:text="${player.country}"></span>
+            </div>
+            <div>
+                <span>Pozycja: </span><span th:text="${player.position}"></span>
+            </div><div>
+                <span>Wzrost: </span><span th:text="${player.height}"></span>
+            </div>
+            <div>
+                <span>Waga: </span><span th:text="${player.weight}"></span>
+            </div><div>
+                <span>Lepsza noga: </span><span th:text="${player.foot}"></span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

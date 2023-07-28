@@ -1,0 +1,27 @@
+<!doctype html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Zawodnik</title>
+    <link rel="stylesheet" type="text/css" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/style-admin.css">
+    <script src="/script/admin.js"></script>
+</head>
+<body>
+    <div class="main-content">
+        <div th:replace="~{fragments/menu-admin::menu-admin}"></div>
+        
+        <div class="right-content-admin">
+            <input type="button" onclick="appearFormAdd()" value="Dodaj zawodnika" class="w3-button w3-black">
+            <div class="player" th:each="player : ${players}">
+                <div>
+                    <span th:text="${player.name}"></span><span th:text="${player.surname}"></span><span th:text="${player.number}"></span>
+                </div>
+                <div>
+                    <input type="button" class="w3-button w3-black" value="Edytuj" style="margin-top: 0px; padding-top: 1px; padding-bottom: 1px;" th:onclick="appearFormEdit([[${player}]])"><input type="button" class="w3-button w3-black" value="Usuń" style="margin-top: 0px; padding-top: 1px; padding-bottom: 1px;" th:onclick="appearFormDeletePlayer([[${player}]])">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

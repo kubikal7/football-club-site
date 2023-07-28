@@ -1,0 +1,41 @@
+.left-content-admin{
+    flex: 20%;
+}
+
+.right-content-admin{
+    flex: 80%;
+    background-color: #dfdfdf;
+}
+
+.left-content-admin a{
+    font-size: large;
+    border-style: outset;
+    display: block;
+    text-align: center;
+    line-height: 60px;
+}
+
+.left-content-admin a:visited{
+    border-style: outset;
+}
+
+.player{
+    background-color: white;
+    margin: 10px;
+    line-height: 40px;
+}
+
+.player div:nth-child(1){
+    /*border: 1px solid blue;*/
+    display: inline-block;
+}
+
+.player div:nth-child(2){
+    /*border: 1px solid blue;*/
+    float: right;
+    margin-right: 100px;
+}
+
+.player span{
+    margin:10px;
+}

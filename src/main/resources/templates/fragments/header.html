@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title></title>
+</head>
+<body>
+    <div th:fragment="header" class="w3-bar w3-green flex-center">
+        <a th:href="@{/}" class="w3-bar-item w3-button">Strona główna</a>
+        <a th:href="@{/games}" class="w3-bar-item w3-button">Mecze</a>
+        <a th:href="@{/team}" class="w3-bar-item w3-button">Drużyna</a>
+        <a href="#" class="w3-bar-item w3-button">Kup bilet</a>
+    </div>
+</body>
+</html>

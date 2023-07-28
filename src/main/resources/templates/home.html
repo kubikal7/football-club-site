@@ -1,0 +1,55 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>home</title>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="/css/style.css">
+    </head>
+    <body>
+        
+        <div th:replace="~{fragments/header::header}" class="w3-bar w3-green flex-center">
+        </div>
+        <div class="main-content">
+            <div class="left-content-home">
+                <div class="matches">
+                    <p class="small-title">Mecze</p>
+                    <div th:each="game : ${futuredGames}">
+                        <span th:text="${#temporals.format(game.date, 'dd-MM-yyyy HH:mm')}"></span>
+                        <span th:if="${game.location}=='W'" th:text="|${game.opponent} - Nazwa Klubu|"></span>
+                        <span th:unless="${game.location}=='W'" th:text="|Nazwa Klubu - ${game.opponent}|"></span>
+                    </div>
+                </div>
+                <div class="results">
+                    <p class="small-title">Wyniki</p>
+                    <div th:each="game : ${finishedGames}">
+                        <span th:if="${game.location}=='W'" th:text="|${game.opponent} ${game.result} Nazwa Klubu|"></span>
+                        <span th:unless="${game.location}=='W'" th:text="|Nazwa Klubu ${game.result} ${game.opponent}|"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="news-content">
+                <p class="small-title">Aktualności</p>
+                <a class="post" th:each="post : ${posts}" th:href="@{'/post/' + ${post.id}}">
+                    <img th:src="@{${post.img}}" class="post-image">
+                    <div class="post-title" th:text="${post.title}">
+                        
+                    </div>
+                    <div class="post-description" th:text="${post.description}">
+                      
+                    </div>
+                
+                </a>
+            </div>
+            <div class="right-content-home">
+                <div class="table">
+                    <p class="small-title">Tabela</p>
+                    <div th:each="club : ${leagueTable}">
+                        <span th:text="${club.rank}"></span>
+                        <span th:text="${club.name}"></span>
+                        <span th:text="${club.points}"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

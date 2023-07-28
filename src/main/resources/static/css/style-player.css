@@ -1,0 +1,33 @@
+.left-content-player{
+    flex: 50%;
+    border-right: 1px solid gray;
+}
+
+.card{
+    width:40%;
+    margin-right: 10%;
+    min-width: 200px;
+    float: right;
+    /*border: 1px solid blue;*/
+}
+
+.card img{
+    width:100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.right-content-player{
+    flex: 50%;
+    /*border: 1px solid blue;*/
+}
+
+.right-content-player span:nth-child(2){
+    font-weight: bold;
+}
+
+.right-content-player div{
+    font-size: large;
+    margin-top: 10px;
+    margin-left: 10%;
+}

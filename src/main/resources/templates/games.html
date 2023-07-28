@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Drużyna</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/style-games.css">
+</head>
+<body>
+    <div th:replace="~{fragments/header::header}" class="w3-bar w3-green flex-center"></div>
+    <div class="main-content flex-center">
+        <p class="p-title">Mecze</p>
+        <div class="games-table" th:each="game : ${futuredGames}">
+            <span th:text="${#temporals.format(game.date, 'dd-MM-yyyy HH:mm')}"></span>
+            <span th:if="${game.location}=='W'" th:text="|${game.opponent} - Nazwa Klubu|"></span>
+            <span th:unless="${game.location}=='W'" th:text="|Nazwa Klubu - ${game.opponent}|"></span>
+        </div>
+            <p class="p-title">Wyniki</p>
+        <div class="games-table" th:each="game : ${finishedGames}">
+            <span th:text="${#temporals.format(game.date, 'dd-MM-yyyy HH:mm')}"></span>
+            <span th:if="${game.location}=='W'" th:text="|${game.opponent} ${game.result} Nazwa Klubu|"></span>
+            <span th:unless="${game.location}=='W'" th:text="|Nazwa Klubu ${game.result} ${game.opponent}|"></span>
+        </div>
+    </div>
+</body>
+</html>

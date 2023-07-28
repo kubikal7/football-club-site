@@ -1,0 +1,146 @@
+.main-content{
+    width: 100%;
+    /*border: 1px solid blue;*/
+    margin: auto;
+    max-width: 1300px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.p-title{
+    width: 100%;
+    text-align: center;
+    font-size: 60px;
+    font-family: 'Impact';
+    margin:0px;
+    /*border: 1px solid blue;*/
+}
+
+.small-title{
+    font-size: medium;
+    font-weight: 400;
+    font-family: 'Impact';
+    font-size: 30px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.news-content{
+    width: 50%;
+    /*border: 1px solid red;*/
+    flex: 50%;
+    height: 100%;
+}
+
+.left-content-home{
+    /* border: 1px solid green; */
+    flex:25%;
+}
+
+.right-content-home{
+    /* border: 1px solid black; */
+    flex: 25%;
+    padding-left: 20px;
+}
+
+.post{
+    display: block;
+    border-right: 0px;
+    border-style: outset;
+    margin-bottom: 10px;
+}
+
+.post:link{
+    text-decoration: none;
+}
+
+.post:visited {
+    text-decoration: none;
+}
+
+.post:hover{
+    background-color: lightgray;
+}
+
+.post-image{
+    width: 100%;
+    max-height:100px;
+    object-fit: cover;
+}
+
+.post-title{
+    font-weight: bold;
+    font-size: large;
+}
+
+.post-description{
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.flex-center{
+    display: flex;
+    justify-content: center;
+}
+
+.table div{
+    /* border: 1px solid red; */
+    display: flex;
+}
+
+.table span{
+    height: 30px;
+    line-height: 30px;
+    display: inline-block;
+    background-color: rgb(223, 223, 223);
+    margin: 2%;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.table span:nth-child(1), span:nth-child(3){
+    flex: 10%; 
+}
+
+.table span:nth-child(2){
+    flex: 80%;
+}
+
+.matches span{
+    background-color: rgb(223, 223, 223);
+    padding-left: 10px;
+    display: inline-block;
+}
+
+.matches span:nth-child(1){
+    width: 60%;
+}
+
+.matches span:nth-child(2){
+    width: 90%;
+    min-height: 30px;
+    line-height: 30px;
+    margin-bottom: 10px;
+}
+
+.results span{
+    background-color: rgb(223, 223, 223);
+    padding-left: 10px;
+    display: inline-block;
+    width: 90%;
+    min-height: 30px;
+    line-height: 30px;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 1000px) {
+    .right-content-home, .left-content-home {
+      flex: 100%;
+    }
+    .post-image{
+        max-height:300px;
+    }
+  }

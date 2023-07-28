@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Drużyna</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/style-team.css">
+</head>
+<body>
+    <div th:replace="~{fragments/header::header}" class="w3-bar w3-green flex-center"></div>
+    <div class="main-content flex-center">
+        <p class="p-title">Drużyna</p>
+        <div class="players-table">
+            <div class="name-text-title">
+                <span>Imię</span><span>Nazwisko</span><span>Nr</span>
+            </div>
+            <h3>Bramkarze</h3>
+            <a th:each="player : ${goalkeepers}" th:href="@{'/player/' + ${player.id}}">
+                <span th:text="${player.name}"></span><span th:text="${player.surname}"></span><span th:text="${player.number}"></span>
+            </a>
+            <h3>Obrońcy</h3>
+            <a th:each="player : ${defenders}" th:href="@{'/player/' + ${player.id}}">
+                <span th:text="${player.name}"></span><span th:text="${player.surname}"></span><span th:text="${player.number}"></span>
+            </a>
+            <h3>Pomocnicy</h3>
+            <a th:each="player : ${midfielders}" th:href="@{'/player/' + ${player.id}}">
+                <span th:text="${player.name}"></span><span th:text="${player.surname}"></span><span th:text="${player.number}"></span>
+            </a>
+            <h3>Napastnicy</h3>
+            <a th:each="player : ${attackers}" th:href="@{'/player/' + ${player.id}}">
+                <span th:text="${player.name}"></span><span th:text="${player.surname}"></span><span th:text="${player.number}"></span>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
