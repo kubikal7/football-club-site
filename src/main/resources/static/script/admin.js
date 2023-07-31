@@ -304,7 +304,7 @@ function appearFormEditGame(game){
         <label>Tak</label>
         <input type="radio" name="finished" value="false" onchange="setDisable('result','finished')" checked>
         <label>Nie</label><br>
-        <label>Jeżeli tak podaj wynik</label><input type="text" name="result" disabled><br><br>
+        <label>Jeżeli tak podaj wynik</label><input type="text" name="result" value="`+game.result+`" disabled><br><br>
 
         <input type="submit" class="w3-button w3-black" value="Edytuj" style="margin-bottom: 30px;">
     </form>`
@@ -317,6 +317,12 @@ function appearFormEditGame(game){
             locations[i].checked=true;
         }
     }
+
+    finished = document.getElementsByName("finished");
+    if(game.finished){
+        finished[0].checked=true;
+    }
+    setDisable('result','finished');
 }
 
 function appearFormDeleteGame(game){

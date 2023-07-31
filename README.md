@@ -1,4 +1,4 @@
-# Footbal Club Site
+# Football Club Site
 
 Spring Boot application with H2 in-memory database. "Kup bilet" ("Buy a ticket") and login are not implemented yet. The application is currently only in Polish.
 
